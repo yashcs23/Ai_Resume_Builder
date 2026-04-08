@@ -98,6 +98,27 @@ function ResumeForm() {
     }));
   };
 
+  const removeEducation = (index) => {
+    setFormData(prev => ({
+      ...prev,
+      education: prev.education.filter((_, i) => i !== index)
+    }));
+  };
+
+  const removeExperience = (index) => {
+    setFormData(prev => ({
+      ...prev,
+      experience: prev.experience.filter((_, i) => i !== index)
+    }));
+  };
+
+  const removeProject = (index) => {
+    setFormData(prev => ({
+      ...prev,
+      projects: prev.projects.filter((_, i) => i !== index)
+    }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -106,7 +127,7 @@ function ResumeForm() {
         : await createResume(formData);
       
       if (result) {
-        navigate(`/builder/${result._id}`);
+        navigate(`/resume/${result._id}`);
       }
     } catch (error) {
       console.error('Error saving resume:', error);
@@ -206,6 +227,11 @@ function ResumeForm() {
                 value={edu.year}
                 onChange={(e) => handleEducationChange(index, 'year', e.target.value)}
               />
+              {formData.education.length > 1 && (
+                <button type="button" onClick={() => removeEducation(index)} className="btn-remove" style={{ marginTop: '10px', backgroundColor: 'transparent', color: '#ff4d4f', border: '1px solid #ff4d4f', padding: '5px 10px', borderRadius: '4px', cursor: 'pointer' }}>
+                  Remove Education
+                </button>
+              )}
             </div>
           ))}
           <button type="button" onClick={addEducation} className="btn-add">+ Add Education</button>
@@ -240,6 +266,11 @@ function ResumeForm() {
                 onChange={(e) => handleExperienceChange(index, 'description', e.target.value)}
                 rows="3"
               />
+              {formData.experience.length > 1 && (
+                <button type="button" onClick={() => removeExperience(index)} className="btn-remove" style={{ marginTop: '10px', backgroundColor: 'transparent', color: '#ff4d4f', border: '1px solid #ff4d4f', padding: '5px 10px', borderRadius: '4px', cursor: 'pointer' }}>
+                  Remove Experience
+                </button>
+              )}
             </div>
           ))}
           <button type="button" onClick={addExperience} className="btn-add">+ Add Experience</button>
@@ -268,6 +299,11 @@ function ResumeForm() {
                 value={proj.technologies}
                 onChange={(e) => handleProjectChange(index, 'technologies', e.target.value)}
               />
+              {formData.projects.length > 1 && (
+                <button type="button" onClick={() => removeProject(index)} className="btn-remove" style={{ marginTop: '10px', backgroundColor: 'transparent', color: '#ff4d4f', border: '1px solid #ff4d4f', padding: '5px 10px', borderRadius: '4px', cursor: 'pointer' }}>
+                  Remove Project
+                </button>
+              )}
             </div>
           ))}
           <button type="button" onClick={addProject} className="btn-add">+ Add Project</button>

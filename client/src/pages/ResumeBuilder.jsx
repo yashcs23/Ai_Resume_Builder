@@ -93,10 +93,10 @@ function ResumeBuilder() {
         </div>
 
         {/* Professional Summary */}
-        {resume.professionalSummary && (
+        {(resume.summary || resume.professionalSummary) && (
           <section className="resume-section">
             <h2>Professional Summary</h2>
-            <p>{resume.professionalSummary}</p>
+            <p>{resume.summary || resume.professionalSummary}</p>
           </section>
         )}
 

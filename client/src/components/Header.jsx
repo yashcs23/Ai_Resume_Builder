@@ -8,15 +8,20 @@ function Header() {
     <header className="header">
       <div className="header-container">
         <Link to="/" className="header-logo">
-          <h1>🚀 AI Resume Builder</h1>
+          <span className="logo-icon">🤖</span>
+          <h1>AI Resume Builder</h1>
         </Link>
-        <nav className="header-nav">
-          <Link to="/" className="nav-link">
-            <FaHome /> My Resumes
-          </Link>
-          <Link to="/create" className="nav-link primary">
-            <FaPlus /> Create New
-          </Link>
+        
+        <nav className="header-nav-center">
+          <a href="#features" className="nav-link">Features</a>
+          <a href="#templates" className="nav-link">Templates</a>
+          <a href="#how-it-works" className="nav-link">How it Works</a>
+          <a href="#pricing" className="nav-link">Pricing</a>
+        </nav>
+
+        <nav className="header-nav-right">
+          <Link to="/dashboard" className="nav-link">Log In</Link>
+          <Link to="/create" className="nav-link btn-signup">Sign Up Free</Link>
         </nav>
       </div>
     </header>

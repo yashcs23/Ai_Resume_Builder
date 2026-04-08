@@ -1,12 +1,11 @@
 .header {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: transparent;
   color: white;
   padding: 1.5rem 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  sticky: top;
+  position: sticky;
+  top: 0;
   z-index: 100;
 }
-
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -18,16 +17,29 @@
 .header-logo {
   text-decoration: none;
   color: white;
-  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-icon {
+  color: #a855f7; /* fallback if using svg later */
 }
 
 .header-logo h1 {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: -0.5px;
+  margin: 0;
 }
 
-.header-nav {
+.header-nav-center {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.header-nav-right {
   display: flex;
   gap: 1rem;
   align-items: center;
@@ -36,28 +48,30 @@
 .nav-link {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  color: white;
+  color: var(--text-light); /* Gray color for links */
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  padding: 0.5rem 0;
   transition: all 0.3s ease;
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-weight: 500;
+  font-size: 0.9rem;
 }
 
 .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
+  color: white;
 }
 
-.nav-link.primary {
-  background-color: rgba(255, 255, 255, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+.nav-link.btn-signup {
+  background: linear-gradient(to right, #8b5cf6, #a855f7);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 9999px;
+  font-weight: 600;
 }
 
-.nav-link.primary:hover {
-  background-color: rgba(255, 255, 255, 0.4);
+.nav-link.btn-signup:hover {
+  background: linear-gradient(to right, #7c3aed, #9333ea);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(139, 92, 246, 0.4);
 }
 
 @media (max-width: 768px) {
