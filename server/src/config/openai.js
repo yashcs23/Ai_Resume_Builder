@@ -1,4 +1,4 @@
-const OpenAI = require('openai');
+import OpenAI from 'openai';
 
 let openAiClient;
 
@@ -20,4 +20,4 @@ const getOpenAiClient = () => {
   return openAiClient;
 };
 
-module.exports = getOpenAiClient;
+export default getOpenAiClient;

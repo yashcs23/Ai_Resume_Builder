@@ -1,9 +1,10 @@
 // src/app.js
-require('dotenv').config();  // Must be first
+import dotenv from 'dotenv';
+import express from "express";
+import cors from "cors";
+import connectDB from "./config/db.js";
 
-const express = require("express");
-const cors = require("cors");
-const connectDB = require("./config/db");
+dotenv.config();
 
 console.log("MONGO_URI:", process.env.MONGO_URI); // Should print your URI
 

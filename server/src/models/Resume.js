@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+import { Schema, model } from 'mongoose';
 
 const educationSchema = new Schema(
   {
@@ -49,4 +49,4 @@ const resumeSchema = new Schema(
   { timestamps: true }
 );
 
-module.exports = model('Resume', resumeSchema);
+export default model('Resume', resumeSchema);
