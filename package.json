@@ -1,0 +1,15 @@
+{
+  "name": "ai-resume-builder",
+  "version": "1.0.0",
+  "scripts": {
+    "install-client": "cd client && npm install",
+    "install-server": "cd server && npm install",
+    "install-all": "npm run install-client && npm run install-server",
+    "start-client": "cd client && npm start",
+    "start-server": "cd server && npm start",
+    "dev": "npm run install-all && concurrently \"npm run start-server\" \"npm run start-client\""
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}

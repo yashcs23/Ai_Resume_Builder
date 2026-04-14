@@ -40,7 +40,7 @@ it’s your **personal AI assistant** for crafting professional, modern, and imp
 <table>
 <tr>
 <td align="center">👩‍💻<br><b>Shambhavi Singh</b><br><sub>2315002032</sub></td>
-<td align="center">👨‍💻<br><b>Yuvraj Singh</b><br><sub>231502578</sub></td>
+<td align="center">👨‍💻<br><b>Yuvraj Singh</b><br><sub>2315002578</sub></td>
 <td align="center">👨‍💻<br><b>Pratik Kumar</b><br><sub>2415990027</sub></td>
 <td align="center">👨‍💻<br><b>Yash Purwar</b><br><sub>2315002541</sub></td>
 </tr>
