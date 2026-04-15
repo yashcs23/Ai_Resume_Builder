@@ -1,23 +1,37 @@
 {
-  "name": "ai-resume-backend",
+  "name": "ai-resume-builder-backend",
   "version": "1.0.0",
-  "main": "app.js",
-  "type": "module",
+  "description": "Production-ready Node.js backend for the AI Resume Builder application.",
+  "main": "server.js",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "lint": "echo \"No linting configured\""
   },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "resume",
+    "express",
+    "openai",
+    "mongodb",
+    "ai"
+  ],
+  "author": "",
+  "license": "MIT",
   "dependencies": {
-    "@openrouter/sdk": "^0.10.2",
-    "axios": "^1.7.2",
-    "cors": "^2.8.6",
-    "dotenv": "^16.6.1",
-    "express": "^4.22.1",
-    "mongodb": "^7.1.1",
-    "mongoose": "^9.3.3",
-    "openai": "^6.33.0"
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.0.1",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^8.4.0",
+    "morgan": "^1.10.0",
+    "openai": "^4.47.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.14"
+    "nodemon": "^3.1.0"
   }
 }

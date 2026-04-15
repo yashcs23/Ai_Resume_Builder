@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose';
+const { Schema, model } = require('mongoose');
 
 const educationSchema = new Schema(
   {
@@ -31,6 +31,12 @@ const projectSchema = new Schema(
 
 const resumeSchema = new Schema(
   {
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      required: true,
+      index: true
+    },
     name: { type: String, required: true, trim: true },
     email: { type: String, trim: true },
     phone: { type: String, trim: true },
@@ -40,7 +46,18 @@ const resumeSchema = new Schema(
     experience: { type: [experienceSchema], default: [] },
     projects: { type: [projectSchema], default: [] },
     professionalSummary: { type: String, trim: true },
+    careerHighlight: { type: String, trim: true },
     experienceHighlights: { type: [{ type: String }], default: [] },
+    template: {
+      type: String,
+      enum: ['modern', 'classic', 'minimalist', 'creative', 'executive'],
+      default: 'modern'
+    },
+    templateTheme: {
+      type: String,
+      enum: ['blue', 'green', 'red', 'purple', 'gray'],
+      default: 'blue'
+    },
     optimizedResume: {
       type: Schema.Types.Mixed,
       default: {}
@@ -49,4 +66,4 @@ const resumeSchema = new Schema(
   { timestamps: true }
 );
 
-export default model('Resume', resumeSchema);
+module.exports = model('Resume', resumeSchema);
