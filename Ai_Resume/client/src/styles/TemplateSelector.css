@@ -1,0 +1,231 @@
+.template-selector {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  border: 2px solid #e5e7eb;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.template-selector-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.template-selector-options {
+  flex: 1;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.section-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.preview-toggle {
+  font-size: 12px;
+  padding: 0.4rem 0.8rem;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.preview-toggle:hover {
+  background: #e5e7eb;
+}
+
+.template-section,
+.theme-section {
+  margin-bottom: 2rem;
+}
+
+.template-section h3,
+.theme-section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.template-grid,
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.template-card,
+.theme-card {
+  padding: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  background: white;
+}
+
+.template-card:hover,
+.theme-card:hover {
+  border-color: #2563eb;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+  transform: translateY(-4px);
+}
+
+.template-card.active,
+.theme-card.active {
+  border-color: #2563eb;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-width: 2px;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+}
+
+.template-icon {
+  font-size: 32px;
+  margin-bottom: 0.5rem;
+}
+
+.template-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+
+.template-description {
+  font-size: 11px;
+  color: #6b7280;
+  line-height: 1.3;
+}
+
+.theme-preview {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 0.75rem;
+  border-radius: 3px;
+  overflow: hidden;
+  height: 35px;
+}
+
+.theme-color-primary {
+  flex: 2;
+}
+
+.theme-color-accent {
+  flex: 1;
+}
+
+.theme-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.template-preview-panel {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  padding: 1.5rem;
+  background: #f9fafb;
+  height: max-content;
+  position: sticky;
+  top: 2rem;
+}
+
+.preview-header {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 1rem;
+}
+
+.preview-header h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.preview-note {
+  display: block;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.preview-content {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  max-height: 500px;
+  overflow-y: auto;
+  font-size: 12px;
+}
+
+.preview-content .resume-template {
+  padding: 1rem !important;
+  margin: 0 !important;
+}
+
+.preview-content .resume-template h1 {
+  font-size: 18px !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.preview-content .resume-template h2 {
+  font-size: 13px !important;
+  margin-top: 1rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.preview-content .resume-template p {
+  font-size: 11px !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.preview-content .template-skills {
+  gap: 4px !important;
+}
+
+.preview-content .template-skill-badge {
+  padding: 3px 8px !important;
+  font-size: 10px !important;
+}
+
+@media (max-width: 1024px) {
+  .template-selector-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .template-preview-panel {
+    position: relative;
+    top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .template-selector {
+    padding: 1.5rem;
+  }
+
+  .template-selector-wrapper {
+    gap: 1.5rem;
+  }
+
+  .template-grid,
+  .theme-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+}
