@@ -1,0 +1,213 @@
+.resume-list-container {
+}
+
+.resume-list-container h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+  font-weight: 700;
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+  border-radius: 1rem;
+  border: 2px dashed var(--primary-color);
+  animation: fadeIn 0.4s ease;
+}
+
+.empty-state p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.btn-create {
+  display: inline-block;
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  color: white;
+  padding: 0.9rem 2.5rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 14px rgba(6, 182, 212, 0.35);
+  letter-spacing: 0.3px;
+}
+
+.btn-create:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(6, 182, 212, 0.5);
+  background: linear-gradient(135deg, #06b6d4 0%, #0284c7 100%);
+}
+
+.resumes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.resume-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.resume-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--primary-gradient);
+}
+
+.resume-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(37, 99, 235, 0.25);
+  border-color: #2563eb;
+}
+
+.resume-card-header {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 1rem;
+}
+
+.resume-card-header h3 {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.resume-date {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.resume-card-info {
+  flex: 1;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.resume-card-info p {
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.resume-card-info strong {
+  color: var(--primary-color);
+}
+
+.resume-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.btn-view,
+.btn-edit,
+.btn-delete {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: 0.85rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-view,
+.btn-edit,
+.btn-delete {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.btn-view {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  color: white;
+}
+
+.btn-view:hover {
+  background: linear-gradient(135deg, #1e53e5 0%, #1e40af 100%);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-edit {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+}
+
+.btn-edit:hover {
+  background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-delete {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+}
+
+.btn-delete:hover {
+  background: linear-gradient(135deg, #f87171 0%, #dc2626 100%);
+  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.4);
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .resume-list-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .resumes-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .resume-card-actions {
+    flex-direction: column;
+  }
+
+  .btn-view,
+  .btn-edit,
+  .btn-delete {
+    width: 100%;
+  }
+}
